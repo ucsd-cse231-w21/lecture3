@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build-web": "webpack && cp index.html build/",
-    "build-cli-repl": "tsc node-repl.ts --esModuleInterop --moduleResolution node --outDir cli/"
+    "build-cli-repl": "tsc node-repl.ts --esModuleInterop --moduleResolution node --outDir cli/",
+    "test": "env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha -r ts-node/register 'tests/**/*.test.ts'"
   },
   "author": "",
   "license": "ISC",
